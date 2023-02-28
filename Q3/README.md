@@ -12,17 +12,13 @@ md5sum enigma
 
 Para resolver o problema eu rodei o comando "nm enigma -C" que me deu como resultado o seguinte:
 
-0000000000000000 T subtraction(float, float)
+- 0000000000000000 T subtraction(float, float)
+- 000000000000004e T multiplication(float, float)
+- 000000000000001a T sum(float, float)
+- 0000000000000034 T division(float, float)
+- Então eu assumi que como resultado estas funções retornariam um float.
 
-000000000000004e T multiplication(float, float)
-
-000000000000001a T sum(float, float)
-
-0000000000000034 T division(float, float)
-
-Então eu assumi que como resultado estas funções retornariam um float.
-
-Criei programa em C++ colocando os cabeçalhos das funções e sinalizado que eles viriam de fonte externa:
+Então criei programa em C++ colocando os cabeçalhos das funções e sinalizado que eles viriam de fonte externa:
 - extern float subtraction(float, float);
 - extern float multiplication(float, float);
 - extern float sum(float, float);
@@ -30,7 +26,10 @@ Criei programa em C++ colocando os cabeçalhos das funções e sinalizado que el
 
 Depois simplismente compilei com:
 - g++ -L. -l:enigma main.cpp
-- para executar: ./a.out 
+- O "-L." diz ao compilador que a biblioteca estática está na pasta em que estou compilando
+- O "-l:enigma" diz o compilado o nome do arquivo da biblioteca estática.
+    - Obs.: Se utilizar apenas -lenigma o compilador não encontrará o arquivo pois não possui extensão .a, .o ou .so
+- Para executar: ./a.out 
 
 Confesso que primeiramente tentei fazer a aplicação em C, mas o compilador com o comando:
 - gcc -L. -l:enigma main.cpp
@@ -41,3 +40,6 @@ Confesso que primeiramente tentei fazer a aplicação em C, mas o compilador com
     - /usr/bin/ld: main.c:(.text+0x95): referência não definida para "sum"
     - /usr/bin/ld: main.c:(.text+0xd2): referência não definida para "division"
 - Então decidi pular para o g++
+
+
+# Diferença em linkagem estática e dinâmica.
