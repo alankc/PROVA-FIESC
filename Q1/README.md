@@ -15,4 +15,4 @@ Abra o terminal e execute os comandos:
 - source .profile
 - Para verificar se funcionou: echo $FREERTOS_PATH
     - Deve retornar o caminho
--Para executar: ./build/questao1
+- Para executar, dentro da pasta Q1, execute: ./build/questao1
