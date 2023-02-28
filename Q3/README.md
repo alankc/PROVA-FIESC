@@ -11,9 +11,13 @@ md5sum enigma
 # Resolução
 
 Para resolver o problema eu rodei o comando "nm enigma -C" que me deu como resultado o seguinte:
+
 0000000000000000 T subtraction(float, float)
+
 000000000000004e T multiplication(float, float)
+
 000000000000001a T sum(float, float)
+
 0000000000000034 T division(float, float)
 
 Então eu assumi que como resultado estas funções retornariam um float.
