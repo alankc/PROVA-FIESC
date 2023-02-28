@@ -16,7 +16,7 @@ Abra o terminal e execute os comandos:
 - cd
 - echo export FREERTOS_PATH=caminho_ate_FreeRTOS/nome_da_pasta_do_FreeRTOS >> .bashrc
     - Exemplo: Com o FreeRTOSv202212.00 na pasta pasta home: echo export FREERTOS_PATH=~/FreeRTOSv202212.00 >> .bashrc
-- source .profile
+- source .bashrc
 - Para verificar se funcionou: echo $FREERTOS_PATH
     - Deve retornar o caminho
 - Para executar, dentro da pasta Q1, execute: ./build/questao1
