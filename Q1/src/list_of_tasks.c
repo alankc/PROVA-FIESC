@@ -55,7 +55,7 @@ void vTask2(void *pvParameters)
         xSemaphoreTake(xVariablesMutex, portMAX_DELAY);
         int tmp_number = number;
         tmp_number--;
-        console_print("TAsk 2: %d\n", tmp_number);
+        console_print("Task 2: %d\n", tmp_number);
         number = tmp_number;
         xSemaphoreGive(xVariablesMutex);
         vTaskDelayUntil(&xLastWakeTime, xTime);
