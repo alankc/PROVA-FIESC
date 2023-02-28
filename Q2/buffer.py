@@ -11,7 +11,7 @@ class Buffer:
         if self.count == self.__max_size:
             print(f"ERROR - FULL BUFFER - {item} not added")
         else:
-            self.__tail = (self.__tail + 1) % len(self.__elements) # Para garantir que no começo o count fique em 1 e a tail fique em 0
+            self.__tail = (self.__tail + 1) % self.__max_size # Para garantir que no começo o count fique em 1 e a tail fique em 0
             #print(f"T = {self.__tail}")
             self.__elements[self.__tail] = item
             self.count += 1
@@ -23,7 +23,7 @@ class Buffer:
         else:
             item = self.__elements[self.__head]
             #print(f"H = {self.__head}")
-            self.__head = (self.__head + 1) % len(self.__elements)
+            self.__head = (self.__head + 1) % self.__max_size
             self.count -= 1
             return item
         
