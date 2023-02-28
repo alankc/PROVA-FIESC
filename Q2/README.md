@@ -18,6 +18,7 @@ Implemente uma classe em C++ e em Python que gerencie um buffer circular, com à
 - Arquivos:
     - buffer.hpp: implementa o buffer circular
     - test.cpp: implementa os testes unitários (não consegui utilizar um framework a tempo)
-- Os testes foram realizados por mim no main
-- compile com: g++ test.cpp
--  execute com: ./a.out
+    - test_catch2.cpp: implementa os testes unitários utilizando o framework catch2. Contudo não consegui finalizar os testes a tempo.
+- Para realizar os testes realizados por mim no main
+    - Compile com: g++ test.cpp
+    - Execute com: ./a.out
