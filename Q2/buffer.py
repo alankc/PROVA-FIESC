@@ -1,34 +1,40 @@
-#Eu poderia smimplesmente utilizar a Queue, mas acho que vocês querem que eu implemente na mão.
+#Eu poderia utilizar a Queue, mas acho que vocês querem que eu implemente na mão.
 class Buffer:
-    def __init__(self, max_size):
-        self.start = 0
-        self.end = 0
-        self.elements = [None] * max_size
+    def __init__(self, max_size): #max size é o tamanho máximo do buffer
+        self.__head = 0
+        self.__tail = -1
+        self.count = 0
+        self.__max_size = max_size
+        self.__elements = [None] * max_size
 
     def add(self, item):
-        self.elements[self.end] = item
-        self.end = (self.end + 1) % len(self.elements)
-        if self.end == self.start:
-            self.start = (self.start + 1) % len(self.elements)
+        if self.count == self.__max_size:
+            print(f"ERROR - FULL BUFFER - {item} not added")
+        else:
+            self.__tail = (self.__tail + 1) % len(self.__elements) # Para garantir que no começo o count fique em 1 e a tail fique em 0
+            #print(f"T = {self.__tail}")
+            self.__elements[self.__tail] = item
+            self.count += 1
 
     def remove(self):
-        if self.start != self.end:
-            item = self.elements[self.start]
-            self.start = (self.start + 1) % len(self.elements)
-            return item
-        else:
+        if self.count == 0:
+            print("ERROR - EMPTY BUFFER")
             return None
+        else:
+            item = self.__elements[self.__head]
+            #print(f"H = {self.__head}")
+            self.__head = (self.__head + 1) % len(self.__elements)
+            self.count -= 1
+            return item
         
-if __name__ == "__main__":
-    b = Buffer(5)
+    def show(self):
+        if self.count == 0:
+            return None
+        else:
+            queue = [None] * self.count
+            id = self.__head
+            for i in range(self.count):
+                queue[i] = self.__elements[id]
+                id = (id + 1) % self.__max_size
 
-    b.add("a")
-    b.add("b")
-    b.add("c")
-    b.add("d")
-    b.add("e")
-    b.add("b")
-
-    print(b.elements)
-    print(b.start)
-    print(b.end)
+            return queue
