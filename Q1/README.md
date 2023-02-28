@@ -7,7 +7,7 @@ Utilizando a versão do FreeRTOS para computadores (Windows ou Linux) implente u
 - Tarefa 2, Leia a variável compartilhada decremente o valor 1 e imprima o seu valor na serial e salve a variável com o seu novo valor;
 
 ## Informações Gerais:
-- Na pasta src você irá encontrar a implementação das tarefas no arquivolist_of_tasks.c
+- Na pasta src você irá encontrar a implementação das tarefas no arquivo list_of_tasks.c
 
 ## Para compilar e executar:
 
