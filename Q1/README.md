@@ -8,6 +8,7 @@ Utilizando a versão do FreeRTOS para computadores (Windows ou Linux) implente u
 
 ## Informações Gerais:
 - Na pasta src você irá encontrar a implementação das tarefas no arquivo list_of_tasks.c
+- Eu coloquei um delay nas tarefas para ficar mais visualizável
 
 ## Para compilar e executar:
 
