@@ -5,7 +5,10 @@ Utilizando a versão do FreeRTOS para computadores (Windows ou Linux) implente u
 - Tenha uma variável do tipo inteiro que várias tarefas possam acessar;
 - Tarefa 1, Leia a variável compartilhada incremente o valor 1 e imprima o seu valor na serial e salve a variável com o seu novo valor;
 - Tarefa 2, Leia a variável compartilhada decremente o valor 1 e imprima o seu valor na serial e salve a variável com o seu novo valor;
-       
+
+## Informações Gerais:
+- Na pasta src você irá encontrar a implementação das tarefas no arquivolist_of_tasks.c
+
 ## Para compilar e executar:
 
 Abra o terminal e execute os comandos: 

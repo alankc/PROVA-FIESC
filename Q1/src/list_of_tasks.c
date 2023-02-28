@@ -1,5 +1,4 @@
 /********** Code informaation **********/
-/**** Creation date: June 29, 2021 *****/
 /**** Developer: Alan Kunz Cechinel ****/
 /**** e-mail: cechinel.a.k@gmail.com ***/
 /***************************************/
